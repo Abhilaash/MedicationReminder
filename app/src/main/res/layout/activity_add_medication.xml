@@ -63,10 +63,12 @@
                             android:inputType="number" />
 
                         <ImageButton
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-
-                            android:src="@drawable/ic_plus" />
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_plus"
+                            android:padding="12dp"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter" />
                     </LinearLayout>
                     <ListView
                         android:layout_width="match_parent"
