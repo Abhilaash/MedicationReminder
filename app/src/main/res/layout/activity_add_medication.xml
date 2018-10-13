@@ -34,11 +34,29 @@
                     android:layout_height="match_parent"
                     android:background="#ccc"
                     android:orientation="vertical">
-
-                    <TextView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="This is tab 2" />
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <EditText
+                            android:id="@+id/MedicationName"
+                            android:layout_width="170dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Name of med"
+                            android:inputType="textPersonName" />
+
+                        <EditText
+                            android:id="@+id/NumTabletsTotal"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="Count"
+                            android:inputType="number" />
+                    </LinearLayout>
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
                 </LinearLayout>
 
                 <android.support.constraint.ConstraintLayout
