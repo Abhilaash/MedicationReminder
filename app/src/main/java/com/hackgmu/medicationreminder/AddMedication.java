@@ -20,9 +20,9 @@ public class AddMedication extends AppCompatActivity {
         tabHost.setup();
         TabHost.TabSpec spec = tabHost.newTabSpec("One");
         spec.setContent(R.id.tab1);
-        spec.setIndicator("One");
+        spec.setIndicator("Two");
         tabHost.addTab(spec);
-        spec = tabHost.newTabSpec("Two");
+        spec = tabHost.newTabSpec("Schedule");
         spec.setContent(R.id.tab2);
         spec.setIndicator("Two");
         tabHost.addTab(spec);
