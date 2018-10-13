@@ -18,13 +18,13 @@ public class AddMedication extends AppCompatActivity {
         // Create a tab listener that is called when the user changes tabs.
         TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
         tabHost.setup();
-        TabHost.TabSpec spec = tabHost.newTabSpec("One");
+        TabHost.TabSpec spec = tabHost.newTabSpec("MedTable");
         spec.setContent(R.id.tab1);
-        spec.setIndicator("Two");
+        spec.setIndicator("Medication");
         tabHost.addTab(spec);
-        spec = tabHost.newTabSpec("Schedule");
+        spec = tabHost.newTabSpec("Events");
         spec.setContent(R.id.tab2);
-        spec.setIndicator("Two");
+        spec.setIndicator("Schedule");
         tabHost.addTab(spec);
     }
 }
