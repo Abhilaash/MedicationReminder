@@ -1,11 +1,7 @@
 package com.hackgmu.medicationreminder;
 
-import android.app.ActionBar;
-import android.app.FragmentTransaction;
-import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TabHost;
 
 public class AddMedication extends AppCompatActivity {
