@@ -40,7 +40,7 @@
                         android:orientation="horizontal">
                         <EditText
                             android:id="@+id/MedicationName"
-                            android:layout_width="170dp"
+                            android:layout_width="220dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:hint="Name of med"
@@ -48,11 +48,15 @@
 
                         <EditText
                             android:id="@+id/NumTabletsTotal"
-                            android:layout_width="70dp"
+                            android:layout_width="65dp"
                             android:layout_height="wrap_content"
                             android:ems="10"
                             android:hint="Count"
                             android:inputType="number" />
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_plus"/>
                     </LinearLayout>
                     <ListView
                         android:layout_width="match_parent"
