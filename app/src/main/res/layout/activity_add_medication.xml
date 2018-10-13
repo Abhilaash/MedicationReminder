@@ -5,100 +5,82 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddMedication">
-
-    <LinearLayout
+    <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
+        android:layout_height="match_parent">
+        <ToggleButton
+            android:id="@+id/sunday"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/round_button"
+            android:layout_marginTop="64dp"
+            android:textOff="Sun"
+            android:textOn="Sun"
+            app:layout_constraintEnd_toStartOf="@+id/monday"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <ToggleButton
-        android:id="@+id/sunday"
-        android:layout_marginTop="200dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/round_button"
-        android:textOff="Sun"
-        android:textOn="Sun"
-        app:layout_constraintEnd_toStartOf="@+id/monday"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        <ToggleButton
+            android:id="@+id/monday"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/round_button"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="64dp"
+            android:textOff="Mon"
+            android:textOn="Mon"
+            app:layout_constraintLeft_toRightOf="@id/sunday" />
 
-    <ToggleButton
-        android:id="@+id/monday"
-        android:layout_marginTop="200dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/round_button"
-        android:textOff="Mon"
-        android:textOn="Mon"
-        app:layout_constraintEnd_toStartOf="@+id/tuesday"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sunday" />
+        <ToggleButton
+            android:id="@+id/tuesday"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/round_button"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="64dp"
+            android:textOff="Tue"
+            android:textOn="Tue"
+            app:layout_constraintLeft_toRightOf="@id/monday" />
 
-    <ToggleButton
-        android:id="@+id/tuesday"
-        android:layout_marginTop="200dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/round_button"
-        android:textOff="Tue"
-        android:textOn="Tue"
-        app:layout_constraintEnd_toStartOf="@+id/wednesday"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/monday" />
+        <ToggleButton
+            android:id="@+id/wednesday"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/round_button"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="64dp"
+            android:textOff="Wed"
+            android:textOn="Wed"
+            app:layout_constraintLeft_toRightOf="@id/tuesday"/>
 
-    <ToggleButton
-        android:id="@+id/wednesday"
-        android:layout_marginTop="200dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/round_button"
-        android:textOff="Wed"
-        android:textOn="Wed"
-        app:layout_constraintEnd_toStartOf="@+id/thursday"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/tuesday" />
-
-    <ToggleButton
-        android:id="@+id/thursday"
-        android:layout_marginTop="200dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/round_button"
-        android:textOff="Thu"
-        android:textOn="Thu"
-        app:layout_constraintEnd_toStartOf="@+id/friday"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/wednesday" />
-
-    <ToggleButton
-        android:id="@+id/friday"
-        android:layout_marginTop="200dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/round_button"
-        android:textOff="Fri"
-        android:textOn="Fri"
-        app:layout_constraintEnd_toStartOf="@+id/saturday"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/thursday" />
-
-    <ToggleButton
-        android:id="@+id/saturday"
-        android:layout_marginTop="200dp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/round_button"
-        android:textOff="Sat"
-        android:textOn="Sat"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/friday" />
-    </LinearLayout>
+        <ToggleButton
+            android:id="@+id/thursday"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/round_button"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="64dp"
+            android:textOff="Thu"
+            android:textOn="Thu"
+            app:layout_constraintLeft_toRightOf="@id/wednesday"/>
+        <ToggleButton
+            android:id="@+id/friday"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/round_button"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="64dp"
+            android:textOff="Fri"
+            android:textOn="Fri"
+            app:layout_constraintLeft_toRightOf="@id/thursday"/>
+        <ToggleButton
+            android:id="@+id/saturday"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/round_button"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="64dp"
+            android:textOff="Sat"
+            android:textOn="Sat"
+            app:layout_constraintLeft_toRightOf="@id/friday"/>
+    </ListView>
 </android.support.constraint.ConstraintLayout>
