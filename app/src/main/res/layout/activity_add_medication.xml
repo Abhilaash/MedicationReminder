@@ -32,7 +32,7 @@
                     android:id="@+id/tab1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#da8200"
+                    android:background="#ccc"
                     android:orientation="vertical">
 
                     <TextView
@@ -45,7 +45,7 @@
                     android:id="@+id/tab2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#ffc916"
+                    android:background="#ccc"
                     android:orientation="vertical">
                     <ToggleButton
                         android:id="@+id/sunday"
