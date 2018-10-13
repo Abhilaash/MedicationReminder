@@ -1,15 +1,20 @@
 package com.hackgmu.medicationreminder;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.*;
 
@@ -45,18 +50,27 @@ public class AddMedication extends AppCompatActivity {
             public void onClick(View v) {
                 EditText medicationEditText = (EditText) findViewById(R.id.MedicationName);
                 EditText medicationAmountEditText = (EditText) findViewById(R.id.NumTabletsTotal);
-                if ((medicationEditText != null) && (medicationAmountEditText.getText() != null)) {
+                if ((medicationEditText != null) && (!medicationAmountEditText.getText().toString().equals("") && medicationAmountEditText.getText().toString().length() > 0)) {
                     String medicationName = medicationEditText.getText().toString();
                     int medicationAmount = Integer.parseInt(medicationAmountEditText.getText().toString());
                     newMed = new medication(medicationName, medicationAmount);
                     Medicines.add(newMed);
-                    Log.e(newMed.getName(), newMed.getNum() + "");
                     medicationEditText.setText("");
                     medicationAmountEditText.setText("");
+                    // Write a message to the database
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = database.getReference("Medications");
+                    myRef.setValue(medicationName);
+                    myRef = database.getReference(medicationName);
+                    myRef.setValue(medicationAmount);
                 } else {
                     Toast toast = Toast.makeText(getApplicationContext(), "Please fill out the entire form", Toast.LENGTH_SHORT);
                     toast.show();
                 }
+                InputMethodManager imm = (InputMethodManager) AddMedication.this.getSystemService(Context.INPUT_METHOD_SERVICE);
+                if (null != AddMedication.this.getCurrentFocus())
+                    imm.hideSoftInputFromWindow(AddMedication.this.getCurrentFocus()
+                            .getApplicationWindowToken(), 0);
             }
         });
     }
