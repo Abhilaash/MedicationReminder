@@ -25,7 +25,7 @@ public class medicationAdapter extends ArrayAdapter<medication> {
         TextView medicationName = medication_and_doses.findViewById(R.id.medication);
         medicationName.setText(medication.getName());
         TextView medicationNum = medication_and_doses.findViewById(R.id.amount);
-        medicationNum.setText(medication.getNum());
+        medicationNum.setText(medication.getNum() + "");
         return medication_and_doses;
     }
 }
