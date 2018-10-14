@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "273547493978",
+    "firebase_url": "https://pathack-e498d.firebaseio.com",
+    "project_id": "pathack-e498d",
+    "storage_bucket": "pathack-e498d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273547493978:android:ab2c5b6bd3d6e7a8",
+        "android_client_info": {
+          "package_name": "com.hackgmu.medicationreminder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273547493978-6tj43ak70fpucvotr5u1f25jrqc1ofr6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hackgmu.medicationreminder",
+            "certificate_hash": "f617291f99b0b3e59af7e5c2a185f3a64afb99b7"
+          }
+        },
+        {
+          "client_id": "273547493978-7b9f8rg3oajb4i177h0f84j9hq594j41.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hackgmu.medicationreminder",
+            "certificate_hash": "fdba76384b66fdfaec1ee0e34d1aa42261d5c2c8"
+          }
+        },
+        {
+          "client_id": "273547493978-sidf4abs31gkh68r330u2m5c3d3418p3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsvcGfXhNJB7wkeUcqzY9xqCqUrHLyggk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273547493978-en31id4617lel3r4rvpml4imqkn7hlf5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
