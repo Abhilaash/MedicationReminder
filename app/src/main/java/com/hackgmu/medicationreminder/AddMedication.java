@@ -3,6 +3,7 @@ package com.hackgmu.medicationreminder;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -11,14 +12,20 @@ import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class AddMedication extends AppCompatActivity {
     private ArrayList<medication> Medicines = new ArrayList<>();
     medication newMed;
+    // Write a message to the database
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("Medications");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +49,25 @@ public class AddMedication extends AppCompatActivity {
         spec.setIndicator("Schedule");
         tabHost.addTab(spec);
 
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                Medicines.clear();
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    medication medication = postSnapshot.getValue(medication.class);
+                    Log.e(medication.getName(), medication.getNum() + "");
+                    Medicines.add(medication);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Getting Post failed, log a message
+                Log.w("HELLO", "loadPost:onCancelled", databaseError.toException());
+                // ...
+            }
+        });
+
         ImageButton button = findViewById(R.id.addMedication);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,9 +81,6 @@ public class AddMedication extends AppCompatActivity {
                     Medicines.add(newMed);
                     medicationEditText.setText("");
                     medicationAmountEditText.setText("");
-                    // Write a message to the database
-                    FirebaseDatabase database = FirebaseDatabase.getInstance();
-                    DatabaseReference myRef = database.getReference("Medications");
                     myRef.push().setValue(newMed);
                 } else {
                     Toast toast = Toast.makeText(getApplicationContext(), "Please fill out the entire form", Toast.LENGTH_SHORT);

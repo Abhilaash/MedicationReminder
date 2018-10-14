@@ -1,4 +1,5 @@
 package com.hackgmu.medicationreminder;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class medication {
@@ -9,6 +10,16 @@ public class medication {
     public medication(String medname, int numpills) {
         name = medname;
         num = numpills;
+    }
+
+    public medication(String medname, int numpills, ArrayList<String> schedule) {
+        name = medname;
+        num = numpills;
+        sched = schedule;
+    }
+
+    public medication() {
+
     }
 
     public String getName() {
