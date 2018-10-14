@@ -21,7 +21,7 @@ public class medicationAdapter extends ArrayAdapter<medication> {
         medication medication = getItem(position);
         if (medication_and_doses == null) {
             medication_and_doses = LayoutInflater.from(getContext()).inflate(R.layout.medication_and_doses, parent, false);
-        };
+        }
         TextView medicationName = medication_and_doses.findViewById(R.id.medication);
         medicationName.setText(medication.getName());
         TextView medicationNum = medication_and_doses.findViewById(R.id.amount);

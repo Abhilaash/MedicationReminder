@@ -1,14 +1,15 @@
 package com.hackgmu.medicationreminder;
-import java.util.ArrayList;
-
 public class medication {
     String name;
-    int num;
-    ArrayList<String> schedule = new ArrayList<>();
+    private int num;
+    private boolean[] sched = new boolean[7];
 
     public medication(String medname, int numpills) {
         name = medname;
         num = numpills;
+        for(int x = 0; x < 7; x++) {
+            sched[x] = false;
+        }
     }
 
     public String getName() {
@@ -27,13 +28,15 @@ public class medication {
         this.num = num;
     }
 
-    public void addSchedule(String time) {
-        this.schedule.add(time);
+    public void addSchedule(int time) {
+        this.sched[time] = true;
     }
 
-    public void rmSchedule(String time) {
-        int i = this.schedule.indexOf(time);
-        this.schedule.remove(i);
+    public void rmSchedule(int time) {
+        this.sched[time] = false;
     }
 
+    public boolean[] getSchedule() {
+        return sched;
+    }
 }
