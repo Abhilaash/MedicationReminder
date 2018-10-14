@@ -20,10 +20,10 @@ public class StaticResources {
 
     public static String CLIENT_CHARACTERISTIC_CONFIGURATION_DESCRIPTOR =
             "00002902-0000-1000-8000-00805f9b34fb";
-    public static String HM10_CONFIG = "0000ffe0-0000-1000-8000-00805f9b34fb";
-    public static String HM10_SERIAL_DATA = "0000ffe1-0000-1000-8000-00805f9b34fb";
-    public static String HM10_MANUFAC_NAME = "00002a29-0000-1000-8000-00805f9b34fb";
-    public static String HM10_DEVICE_INFO = "00001800-0000-1000-8000-00805f9b34fb";
+    public static int HM10_CONFIG = 0x2A37;
+    public static int HM10_SERIAL_DATA = 0x180D;
+//    public static String HM10_MANUFAC_NAME = "2A37";
+//    public static String HM10_DEVICE_INFO = "00001800-0000-1000-8000-00805f9b34fb";
 
 
     public static final String CONNECTION_STATE_DISCONNECTED = "Disconnected";

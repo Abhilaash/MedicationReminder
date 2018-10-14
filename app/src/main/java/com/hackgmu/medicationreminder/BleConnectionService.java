@@ -77,8 +77,16 @@ public class BleConnectionService {
                     if (status == BluetoothGatt.GATT_SUCCESS)
                     {
                         m_gattServices = gatt.getServices();
-                        m_characteristicTX = FindCharacteristic(StaticResources.HM10_SERIAL_DATA, m_gattServices);
+                        m_characteristicTX = FindCharacteristic((UUID) StaticResources.HM10_SERIAL_DATA, m_gattServices);
                         String foundSuccess = StaticResources.SERVICES_DISCOVERY_CHARACTERISTIC_FAILURE;
+                        if (m_characteristicTX != null)
+                        {
+                            foundSuccess = StaticResources.SERVICES_DISCOVERY_CHARACTERISTIC_SUCCESS;
+                        }
+                        intent.putExtra(StaticResources.EXTRAS_SERVICES_DISCOVERED,
+                                foundSuccess);
+                        m_characteristicTX = FindCharacteristic(StaticResources.HM10_CONFIG, m_gattServices);
+                        foundSuccess = StaticResources.SERVICES_DISCOVERY_CHARACTERISTIC_FAILURE;
                         if (m_characteristicTX != null)
                         {
                             foundSuccess = StaticResources.SERVICES_DISCOVERY_CHARACTERISTIC_SUCCESS;
@@ -108,11 +116,9 @@ public class BleConnectionService {
 
             };
 
-    private BluetoothGattCharacteristic FindCharacteristic(String uuidString, List<BluetoothGattService> possibleServices) {
-        final UUID desiredUuid = UUID.fromString(uuidString);
+    private BluetoothGattCharacteristic FindCharacteristic(UUID desiredUuid, List<BluetoothGattService> possibleServices) {
         for (BluetoothGattService gattService : possibleServices) {
-            BluetoothGattCharacteristic desiredCharacteristic = gattService.getCharacteristic(
-                    desiredUuid);
+            BluetoothGattCharacteristic desiredCharacteristic = gattService.getCharacteristic(desiredUuid);
             if(desiredCharacteristic !=null)
             {
                 return desiredCharacteristic;
