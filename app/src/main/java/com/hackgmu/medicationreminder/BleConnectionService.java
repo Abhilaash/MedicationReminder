@@ -17,6 +17,8 @@ import android.widget.Toast;
 import java.util.List;
 import java.util.UUID;
 
+import static java.util.UUID.fromString;
+
 /**
  * Created by Owner on 8/4/2018.
  */
@@ -76,8 +78,9 @@ public class BleConnectionService {
                     );
                     if (status == BluetoothGatt.GATT_SUCCESS)
                     {
+                        Log.e("hello", "fdjjfklsdfkjdsfkjd  ");
                         m_gattServices = gatt.getServices();
-                        m_characteristicTX = FindCharacteristic((UUID) StaticResources.HM10_SERIAL_DATA, m_gattServices);
+                        m_characteristicTX = FindCharacteristic((UUID) fromString(StaticResources.HM10_CONFIG), m_gattServices);
                         String foundSuccess = StaticResources.SERVICES_DISCOVERY_CHARACTERISTIC_FAILURE;
                         if (m_characteristicTX != null)
                         {
@@ -85,7 +88,7 @@ public class BleConnectionService {
                         }
                         intent.putExtra(StaticResources.EXTRAS_SERVICES_DISCOVERED,
                                 foundSuccess);
-                        m_characteristicTX = FindCharacteristic(StaticResources.HM10_CONFIG, m_gattServices);
+                        m_characteristicTX = FindCharacteristic(fromString(StaticResources.HM10_CONFIG), m_gattServices);
                         foundSuccess = StaticResources.SERVICES_DISCOVERY_CHARACTERISTIC_FAILURE;
                         if (m_characteristicTX != null)
                         {
@@ -150,7 +153,7 @@ public class BleConnectionService {
         // Enable the local machine to watch changes to this characteristic
         // Then, change the peripheral to notify observers of changes in its payload.
         BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
-                UUID.fromString(StaticResources.CLIENT_CHARACTERISTIC_CONFIGURATION_DESCRIPTOR));
+                fromString(StaticResources.CLIENT_CHARACTERISTIC_CONFIGURATION_DESCRIPTOR));
         descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
         m_gattServer.writeDescriptor(descriptor);
     }

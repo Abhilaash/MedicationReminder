@@ -75,7 +75,9 @@
                         android:id="@+id/ListMeds"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"/>
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp" />
                 </LinearLayout>
 
                 <android.support.constraint.ConstraintLayout
@@ -90,8 +92,8 @@
                         android:layout_height="40dp"
                         android:layout_marginTop="40dp"
                         android:background="@drawable/round_button"
-                        android:textOff="Sun"
-                        android:textOn="Sun"
+                        android:textOff="S"
+                        android:textOn="S"
                         app:layout_constraintEnd_toStartOf="@+id/monday"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
@@ -104,8 +106,8 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="40dp"
                         android:background="@drawable/round_button"
-                        android:textOff="Mon"
-                        android:textOn="Mon"
+                        android:textOff="M"
+                        android:textOn="M"
                         app:layout_constraintEnd_toStartOf="@+id/tuesday"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/sunday"
@@ -118,8 +120,8 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="40dp"
                         android:background="@drawable/round_button"
-                        android:textOff="Tue"
-                        android:textOn="Tue"
+                        android:textOff="T"
+                        android:textOn="T"
                         app:layout_constraintEnd_toStartOf="@+id/wednesday"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/monday"
@@ -132,8 +134,8 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="40dp"
                         android:background="@drawable/round_button"
-                        android:textOff="Wed"
-                        android:textOn="Wed"
+                        android:textOff="W"
+                        android:textOn="W"
                         app:layout_constraintEnd_toStartOf="@+id/thursday"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/tuesday"
@@ -146,8 +148,8 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="40dp"
                         android:background="@drawable/round_button"
-                        android:textOff="Thu"
-                        android:textOn="Thu"
+                        android:textOff="T"
+                        android:textOn="T"
                         app:layout_constraintEnd_toStartOf="@+id/friday"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/wednesday"
@@ -160,8 +162,8 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="40dp"
                         android:background="@drawable/round_button"
-                        android:textOff="Fri"
-                        android:textOn="Fri"
+                        android:textOff="F"
+                        android:textOn="F"
                         app:layout_constraintEnd_toStartOf="@+id/saturday"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/thursday"
@@ -174,14 +176,20 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="40dp"
                         android:background="@drawable/round_button"
-                        android:textOff="Sat"
-                        android:textOn="Sat"
+                        android:textOff="S"
+                        android:textOn="S"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/friday"
                         app:layout_constraintTop_toTopOf="parent" />
 
-
+                    <ListView
+                        android:id="@+id/ListMedsName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp" />
                 </android.support.constraint.ConstraintLayout>
             </FrameLayout>
         </LinearLayout>

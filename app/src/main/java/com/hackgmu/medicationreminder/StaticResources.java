@@ -20,8 +20,8 @@ public class StaticResources {
 
     public static String CLIENT_CHARACTERISTIC_CONFIGURATION_DESCRIPTOR =
             "00002902-0000-1000-8000-00805f9b34fb";
-    public static int HM10_CONFIG = 0x2A37;
-    public static int HM10_SERIAL_DATA = 0x180D;
+    public static String HM10_CONFIG = "6c73892-55ee-4c91-8719-72b427242384";
+    public static String HM10_SERIAL_DATA = "603e30da-d54c-4d93-9544-27bc33cb5b8b";
 //    public static String HM10_MANUFAC_NAME = "2A37";
 //    public static String HM10_DEVICE_INFO = "00001800-0000-1000-8000-00805f9b34fb";
 
