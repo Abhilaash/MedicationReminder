@@ -48,4 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void launchBluetooth(View view) {
+        Intent intent = new Intent(this, ListOfScansActivity.class);
+        startActivity(intent);
+    }
 }
