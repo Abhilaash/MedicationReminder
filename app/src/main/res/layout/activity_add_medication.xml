@@ -49,7 +49,7 @@
                             android:textColor="#FFF"
                             android:hint="Name of Medication"
                             android:textColorHint="#ddd"
-                            android:layout_marginLeft="5dp"
+                            android:layout_marginLeft="10dp"
                             android:inputType="textPersonName" />
 
                         <EditText
